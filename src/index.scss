@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body{
+    @apply font-body px-5 text-black;
+  }
+}
+@layer components {
+  .page-container {
+    max-width: 1280px;
+    @apply mx-auto;
+  }
+  .page-container-fluid {
+    max-width: 1086px;
+    @apply mx-auto;
+  }
+  // .page-container-fluid {
+  //   max-width: 1440px;
+  //   @apply mx-auto;
+  // }
+  // .course-list .swiper-slide {
+    // width: 230px;
+    // height: auto;
+    // margin-right: 15px !important;
+  // }
+  .banner-achievement .swiper-slide {
+    width: 385px;
+    // height: auto;
+  }
+  .banner .swiper {
+    height: 100%;
+  }
+}
+// pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .selected {
+    @apply text-primary;
+  }
+}
+
+// loading Skeleton
+.skeleton {
+  background-color: #eee;
+  background-image: linear-gradient(
+    110deg,
+    #ececec 8%,
+    #f5f5f5 18%,
+    #ececec 33%
+  );
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+// ... content <p></p>
+.preview-text{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+// course title
+.course-title,
+.popular-instructor{
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.course-rating {
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.course-instructer {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.top-categories-img {
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+.top-categories-img:hover {
+  transform: scale(1.1);
+}
+.swiper-nav-btns button {
+  box-shadow: 0 3px 10px 3px rgba(0,0,0,0.1)
+}
+// Customize swiper
+.slide-teacher .swiper {
+  padding: 0 40px;
+}
+.banner-customer .swiper{
+  padding: 0 30px;
+}
+// ================================
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  // background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  // height: 4000px;
+  box-sizing: border-box;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  // text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  // width: 100%;
+  // height: 100%;
+  object-fit: cover;
+}
+
+// .slide-teacher .swiper-button-next{
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 100rem;
+//   background-color: black;
+//   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+// }
+// .slide-teacher .swiper-button-next::after {
+//   content: '';
+//   position: absolute;
+//   inset: 0;
+//   // position: relative;
+//   background-image: url(https://cdn-icons-png.flaticon.com/512/2989/2989988.png);
+//   background-repeat: no-repeat;
+//   background-size: 100% auto;
+//   background-position: center;
+//   z-index: 50;
+// }
+.banner-customer .swiper-button-next,
+.course-list .swiper-button-next,
+.slide-teacher .swiper-button-next {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/318/318476.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% auto;
+  background-position: center;
+  z-index: 999;
+  filter: blur(0.7px);
+}
+.banner-customer .swiper-button-next::after,
+.course-list .swiper-button-next::after,
+.slide-teacher .swiper-button-next::after{
+  display: none;
+}
+.banner-customer .swiper-button-prev,
+.slide-teacher .swiper-button-prev {
+  // background-image: url(https://cdn-icons-png.flaticon.com/512/2609/2609370.png);
+  background-image: url(https://cdn-icons-png.flaticon.com/512/318/318477.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% auto;
+  background-position: center;
+  z-index: 999;
+  filter: blur(0.7px);
+}
+.banner-customer .swiper-button-prev::after,
+.slide-teacher .swiper-button-prev::after{
+  display: none;
+}
+.banner-customer .swiper-button-next.swiper-button-disabled,
+.banner-customer .swiper-button-prev.swiper-button-disabled,
+.course-list .swiper-button-next.swiper-button-disabled,
+.slide-teacher .swiper-button-next.swiper-button-disabled, 
+.slide-teacher .swiper-button-prev.swiper-button-disabled {
+  display: none;
+}
